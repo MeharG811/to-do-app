@@ -3,17 +3,19 @@ from todolist.models import status_Return
 
 from .models import Tasks
 from .forms import TaskForm
-from django.db.models import Q
+from django.db.models import Q,Count
 # Create your views here.
 
 def home(request):
     
     status_=status_Return()
     task=Tasks.objects.all()
+    task_counts = Tasks.objects.values('status').annotate(count=Count('status')).order_by('status')
     forms={
         "key":1,
         "status_":status_,
-        "tasks":task
+        "tasks":task,
+        "task_counts":task_counts
     }
 
 
@@ -34,7 +36,8 @@ def home(request):
                 forms={
                     "key":1,
                     "status_":status_,
-                    "tasks":tasks
+                    "tasks":tasks,
+                    "task_counts":task_counts
                 }
                 return render(request,"index.html",{'forms': forms})
         

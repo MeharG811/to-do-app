@@ -1,3 +1,4 @@
+
 // Get the modal
 var modal = document.getElementById("myModal");
 // Get the button that opens the modal
@@ -23,3 +24,44 @@ window.onclick = function(event) {
 function hide(modalId) {
     document.getElementById(modalId).style.display = 'none';
 }
+
+function openEditModal(taskId, taskTitle, taskDescription, taskStatus) {
+  console.log("openEditModal called with", taskId, taskTitle, taskDescription, taskStatus);
+  var titleElem = document.getElementById('title');
+  var descriptionElem = document.getElementById('description');
+  var statusElem = document.getElementById('status');
+  var editUrl = document.getElementById('edit-task-url').getAttribute('data-url');
+
+  if (titleElem && descriptionElem && statusElem) {
+    titleElem.value = taskTitle;
+    descriptionElem.value = taskDescription;
+    statusElem.value = taskStatus;
+    document.getElementById('taskForm').action = editUrl.replace('0', taskId); // Update form action URL
+    var myModal = new bootstrap.Modal(document.getElementById('basicModal'));
+    myModal.show();
+  } else {
+    console.error("One or more elements are not found in the DOM.");
+  }
+}
+
+
+  function opentrt() {
+    // console.log("openEditModal called with", taskId, taskTitle, taskDescription, taskStatus);
+    // // var taskIdElem = document.getElementById('task_id');
+    // var titleElem = document.getElementById('title');
+    // var descriptionElem = document.getElementById('description');
+    // var statusElem = document.getElementById('status');
+    
+    // if (taskIdElem && titleElem && descriptionElem && statusElem) {
+    //     // taskIdElem.value = taskId;
+    //     titleElem.value = taskTitle;
+    //     descriptionElem.value = taskDescription;
+    //     statusElem.value = taskStatus;
+    //     document.getElementById('taskForm').action = "{% url 'edit_task' 0 %}".replace('0', taskId); // Update form action URL
+        var myModal = new bootstrap.Modal(document.getElementById('basicModal'));
+        myModal.show();
+    // } else {
+    //     console.error("One or more elements are not found in the DOM.");
+    // }
+}
+

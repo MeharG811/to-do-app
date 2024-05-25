@@ -5417,9 +5417,8 @@ textarea.form-control-lg {
   width: 100vw;
   height: 100vh;
   background-color: #435971;
-} */
-
-/* .offcanvas-backdrop.fade {
+}
+.offcanvas-backdrop.fade {
   opacity: 0;
 }
 .offcanvas-backdrop.show {
@@ -15250,7 +15249,7 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
   justify-content: space-between;
 }
 
-/* .content-backdrop {
+.content-backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -15264,7 +15263,7 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
 }
 .content-backdrop.show {
   opacity: 0.5;
-} */
+}
 .layout-menu-fixed .content-backdrop {
   z-index: 10;
 }
