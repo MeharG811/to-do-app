@@ -15,6 +15,7 @@ frontend
     opensource html theme sneat
 
 run project 
+
     git clone https://github.com/MeharG811/to-do-app.git
     cd to-do-app
     python manage.py runserver 127.0.0.1:8001
