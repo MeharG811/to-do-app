@@ -21,13 +21,18 @@ installation
     pip install django
     pip install pytest
     
-run project 
+get project 
 
     git clone https://github.com/MeharG811/to-do-app.git
+    
+go to project root   
+
     cd to-do-app
+
+run Project
+
     python manage.py runserver 127.0.0.1:8001
 
 Run tests
 
-    cd to-do-app
     pytest
