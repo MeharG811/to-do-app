@@ -29,10 +29,12 @@ def home(request):
 
     if request.method=="GET":
             query = request.GET.get('query')
+            tasks = Tasks.objects.all()
             if query:
-                tasks = Tasks.objects.filter(
+                tasks = tasks.filter(
                     Q(title__icontains=query) | Q(description__icontains=query)
                 )
+                task_counts = tasks.values('status').annotate(count=Count('status')).order_by('status')
                 forms={
                     "key":1,
                     "status_":status_,
